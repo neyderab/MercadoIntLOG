@@ -1,0 +1,640 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+
+:root {
+
+  --primary: #00C2FF;
+  --secondary: #10B981;
+  --dark: #0F172A;
+  --dark-light: #1E293B;
+  --white: #ffffff;
+  --gray: #94A3B8;
+  --bg: #F8FAFC;
+
+  --shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+
+  --shadow-hover:
+    0 20px 45px rgba(0,0,0,0.18);
+
+  --radius: 22px;
+
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  background:
+    linear-gradient(to bottom,
+    #f8fafc,
+    #e2e8f0);
+
+  color: var(--dark);
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+body::before{
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top left,
+    rgba(0,194,255,0.12),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(16,185,129,0.12),
+    transparent 35%);
+
+  z-index: -2;
+}
+
+.navbar{
+  backdrop-filter: blur(14px);
+  background: rgba(15,23,42,0.85) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0;
+  transition: 0.4s ease;
+}
+
+.navbar-brand{
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav-link{
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  margin-left: 12px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover{
+  color: var(--secondary) !important;
+}
+
+.nav-link::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+
+  background: var(--secondary);
+
+  transition: 0.3s ease;
+}
+
+.nav-link:hover::after{
+  width: 100%;
+}
+/
+
+.hero{
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(15,23,42,0.78),
+    rgba(15,23,42,0.88)),
+
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070');
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero::before{
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle,
+    rgba(0,194,255,0.15),
+    transparent 60%);
+
+  animation: pulse 8s infinite;
+}
+
+.hero h1{
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+
+  animation: fadeUp 1s ease;
+}
+
+.hero p{
+  color: rgba(255,255,255,0.82);
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: auto;
+
+  animation: fadeUp 1.4s ease;
+}
+
+
+.btn{
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: 0.35s ease;
+}
+
+.btn-success{
+  background: linear-gradient(135deg,
+  #10B981,
+  #06B6D4);
+
+  border: none;
+}
+
+.btn-success:hover{
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 30px rgba(16,185,129,0.4);
+}
+
+.btn-primary{
+  border: none;
+
+  background: linear-gradient(135deg,
+  #0EA5E9,
+  #2563EB);
+}
+
+.btn-primary:hover{
+  transform: translateY(-4px);
+}
+
+
+section{
+  padding: 100px 0;
+  position: relative;
+}
+
+h2{
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: var(--dark);
+}
+
+.text-muted{
+  color: #64748B !important;
+}
+
+
+
+.card{
+
+  border: none;
+  border-radius: var(--radius);
+
+  background: rgba(255,255,255,0.72);
+
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  box-shadow: var(--shadow);
+}
+
+.card:hover{
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card::before{
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(130deg,
+    rgba(0,194,255,0.08),
+    rgba(16,185,129,0.08));
+
+  opacity: 0;
+
+  transition: 0.4s ease;
+}
+
+.card:hover::before{
+  opacity: 1;
+}
+
+
+/* =========================================
+   TEAM SECTION
+========================================= */
+
+.team-card{
+
+  background: white;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  transition: 0.4s ease;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+  height: 100%;
+}
+
+.team-card:hover{
+
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 25px 45px rgba(0,0,0,0.15);
+}
+
+/* CONTENEDOR DE IMAGEN */
+
+.team-img{
+
+  width: 100%;
+
+  height: 350px;
+
+  object-fit: cover;
+
+  object-position: top;
+
+  display: block;
+
+  background: #e2e8f0;
+}
+
+/* INFO */
+
+.team-info{
+
+  padding: 25px;
+}
+
+.team-info h4{
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.team-info p{
+
+  color: #64748B;
+
+  margin-bottom: 0;
+}
+
+/* BADGE */
+
+.featured-badge{
+
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  background:
+    linear-gradient(135deg,#10B981,#06B6D4);
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  z-index: 10;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .team-img{
+
+    height: 280px;
+  }
+
+}
+
+/* =========================
+   SEMESTRES NUEVOS
+========================= */
+
+.semester-section{
+
+  background:
+    linear-gradient(rgba(15,23,42,0.94),
+    rgba(15,23,42,0.96));
+
+  color: white;
+
+  overflow: hidden;
+}
+
+.timeline{
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline::before{
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(to bottom,
+    #00C2FF,
+    #10B981);
+
+  border-radius: 50px;
+}
+
+.timeline-card{
+
+  position: relative;
+
+  width: 50%;
+
+  padding: 25px 45px;
+}
+
+.timeline-card:nth-child(odd){
+  left: 0;
+  text-align: right;
+}
+
+.timeline-card:nth-child(even){
+  left: 50%;
+}
+
+.timeline-content{
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(14px);
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  transition: 0.4s ease;
+}
+
+.timeline-content:hover{
+
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 30px rgba(16,185,129,0.3);
+}
+
+.semester-number{
+
+  position: absolute;
+
+  top: 50%;
+
+  right: -25px;
+
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(135deg,
+    #10B981,
+    #00C2FF);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+  color: white;
+
+  box-shadow:
+    0 0 20px rgba(0,194,255,0.5);
+}
+
+.timeline-card:nth-child(even)
+.semester-number{
+  left: -25px;
+}
+
+/* =========================
+   DICCIONARIOS
+========================= */
+
+#diccionario{
+  background:
+    linear-gradient(to bottom,
+    #f8fafc,
+    #e2e8f0);
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+#contacto{
+
+  background:
+    linear-gradient(135deg,
+    #0F172A,
+    #1E293B);
+
+  position: relative;
+}
+
+#contacto::before{
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle,
+    rgba(0,194,255,0.12),
+    transparent 60%);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+  background: #020617;
+
+  color: rgba(255,255,255,0.7);
+
+  border-top:
+    1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse{
+
+  0%{
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50%{
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes floating{
+
+  0%{
+    transform: translateY(0px);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 992px){
+
+  .hero h1{
+    font-size: 3rem;
+  }
+
+  .timeline::before{
+    left: 20px;
+  }
+
+  .timeline-card{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 20px;
+  }
+
+  .timeline-card:nth-child(odd),
+  .timeline-card:nth-child(even){
+    left: 0;
+    text-align: left;
+  }
+
+  .semester-number{
+    left: -5px !important;
+    right: auto;
+  }
+}
+
+@media(max-width: 768px){
+
+  .hero{
+    text-align: center;
+    padding: 120px 20px;
+  }
+
+  .hero h1{
+    font-size: 2.3rem;
+  }
+
+  .hero p{
+    font-size: 1rem;
+  }
+
+  section{
+    padding: 70px 0;
+  }
+
+  .team-img{
+    height: 280px;
+  }
+}

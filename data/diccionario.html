@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario de Datos - MIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="LOGO MIA.png" alt="Logo MIA">
+        <h1>Diccionario de Datos - MIA</h1>
+        <p><em>Mercado Inteligente Asistido</em></p>
+        <p><strong>Fecha:</strong> 2025-11-07</p>
+    </header>
+
+    <h2>Índice Alfabético</h2>
+    <div class="indice">
+        <a href="#categoria">Categoría</a>
+        <a href="#detalle">Detalle</a>
+        <a href="#inventario">Inventario</a>
+        <a href="#sugerencias">Sugerencias</a>
+        <a href="#usuario">Usuario</a>
+    </div>
+
+    <!-- Tabla Categoría -->
+    <h2 id="categoria">Categoría</h2>
+    <table>
+        <tr><th>Nombre de Columna</th><th>Tipo de Dato</th><th>PK</th><th>NN</th><th>Comentario</th></tr>
+        <tr><td>idcategoria</td><td>INT</td><td>✓</td><td>✓</td><td>Identifica el número de categoría.</td></tr>
+        <tr><td>nombre_categoria</td><td>VARCHAR(45)</td><td></td><td></td><td>Nombre de la categoría del producto (ej. frutas, verduras, etc.).</td></tr>
+    </table>
+
+    <!-- Tabla Detalle -->
+    <h2 id="detalle">Detalle</h2>
+    <table>
+        <tr><th>Nombre de Columna</th><th>Tipo de Dato</th><th>PK</th><th>NN</th><th>Comentario</th></tr>
+        <tr><td>iddetalle</td><td>INT</td><td>✓</td><td>✓</td><td>Identifica cada detalle del producto.</td></tr>
+        <tr><td>fecha</td><td>DATE</td><td></td><td></td><td>Fecha de registro o caducidad.</td></tr>
+        <tr><td>puntuación</td><td>INT</td><td></td><td></td><td>Calificación otorgada al producto.</td></tr>
+        <tr><td>cantidad</td><td>VARCHAR(45)</td><td></td><td></td><td>Cantidad de unidades relacionadas.</td></tr>
+        <tr><td>idusuario</td><td>INT</td><td></td><td></td><td>Llave foránea que conecta con la tabla usuario.</td></tr>
+        <tr><td>inventario</td><td>INT</td><td></td><td></td><td>Llave foránea que conecta con inventario.</td></tr>
+    </table>
+
+    <!-- Tabla Inventario -->
+    <h2 id="inventario">Inventario</h2>
+    <table>
+        <tr><th>Nombre de Columna</th><th>Tipo de Dato</th><th>PK</th><th>NN</th><th>Comentario</th></tr>
+        <tr><td>idinventario</td><td>INT</td><td>✓</td><td>✓</td><td>Identifica el inventario de los productos.</td></tr>
+        <tr><td>producto</td><td>VARCHAR(50)</td><td></td><td>✓</td><td>Nombre del producto disponible.</td></tr>
+        <tr><td>cantidad</td><td>INT</td><td></td><td></td><td>Muestra la cantidad disponible del producto en stock.</td></tr>
+        <tr><td>precio</td><td>DECIMAL(10,2)</td><td></td><td></td><td>Refleja el valor de venta del producto por unidad.</td></tr>
+        <tr><td>fecha_vencimiento</td><td>DATE</td><td></td><td></td><td>Tiempo límite para consumo seguro.</td></tr>
+    </table>
+
+    <!-- Tabla Sugerencias -->
+    <h2 id="sugerencias">Sugerencias</h2>
+    <table>
+        <tr><th>Nombre de Columna</th><th>Tipo de Dato</th><th>PK</th><th>NN</th><th>Comentario</th></tr>
+        <tr><td>idsugerencia</td><td>INT</td><td>✓</td><td>✓</td><td>Identifica cada sugerencia del sistema.</td></tr>
+        <tr><td>sugerencia</td><td>VARCHAR(250)</td><td></td><td></td><td>Opinión o recomendación del usuario.</td></tr>
+        <tr><td>tipo_de_sugerencia</td><td>VARCHAR(80)</td><td></td><td></td><td>Clasificación de la sugerencia (mejora, queja, etc.).</td></tr>
+        <tr><td>preferencia</td><td>VARCHAR(40)</td><td></td><td></td><td>Preferencias o gustos del usuario.</td></tr>
+        <tr><td>idusuario</td><td>INT</td><td></td><td></td><td>Llave foránea que conecta con la tabla usuario.</td></tr>
+    </table>
+
+    <!-- Tabla Usuario -->
+    <h2 id="usuario">Usuario</h2>
+    <table>
+        <tr><th>Nombre de Columna</th><th>Tipo de Dato</th><th>PK</th><th>NN</th><th>Comentario</th></tr>
+        <tr><td>idusuario</td><td>INT</td><td>✓</td><td>✓</td><td>Identifica de forma única al usuario.</td></tr>
+        <tr><td>nombre</td><td>VARCHAR(45)</td><td></td><td>✓</td><td>Nombre del usuario.</td></tr>
+        <tr><td>apellido</td><td>VARCHAR(45)</td><td></td><td></td><td>Apellido del usuario.</td></tr>
+        <tr><td>numero_telefono</td><td>VARCHAR(20)</td><td></td><td></td><td>Número de contacto del usuario.</td></tr>
+        <tr><td>password</td><td>VARCHAR(50)</td><td></td><td></td><td>Contraseña de acceso segura del usuario.</td></tr>
+    </table>
+
+    <footer>
+        <p>© 2025 - Proyecto MIA | Mercado Inteligente Asistido</p>
+    </footer>
+
+</body>
+</html>
